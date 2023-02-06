@@ -1,5 +1,11 @@
+import Header from '../header/Header';
+
 import './App.scss';
 
 export default function App() {
-  return <div></div>;
+  return (
+    <div className="container">
+      <Header />
+    </div>
+  );
 }

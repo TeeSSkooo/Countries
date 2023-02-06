@@ -1,0 +1,45 @@
+.header {
+  box-shadow: 0 3px 15px #ccc;
+  background-color: #fff;
+
+  &__container {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 21px;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &__theme {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__img-wrapper {
+    display: grid;
+    place-items: center;
+  }
+
+  &__img {
+    max-width: 100%;
+    width: 30px;
+  }
+
+  &__btn {
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: transparent;
+  }
+}
+
+@import './media.scss';
