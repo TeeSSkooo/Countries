@@ -1,0 +1,80 @@
+.form {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__group:first-child {
+    position: relative;
+
+    &:first-child::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      width: 25px;
+      height: 25px;
+      background-image: url('../../assets/search.svg');
+      transform: translateY(-50%);
+    }
+  }
+
+  &__group:last-child {
+    position: relative;
+
+    &:last-child:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+      background-image: url('../../assets/arrow-down.png');
+      transform: translateY(-50%);
+    }
+  }
+
+  &__search {
+    position: relative;
+    padding: 15px 15px 15px 50px;
+    border: none;
+    box-shadow: 0 3px 5px #ccc;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__filter {
+    font-family: inherit;
+  }
+
+  &__filter {
+    position: relative;
+    padding: 15px 50px 15px 10px;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 3px 5px #ccc;
+    font-size: 16px;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    option {
+      font-size: 16px;
+      color: #000;
+
+      &:first-child {
+        color: #bdbdbd;
+      }
+    }
+  }
+}
+
+@import './media.scss';
