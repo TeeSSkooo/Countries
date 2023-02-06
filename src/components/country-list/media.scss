@@ -1,0 +1,11 @@
+@media (max-width: 1200px) {
+  .country-list__items {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .country-list__items {
+    grid-template-columns: auto;
+  }
+}

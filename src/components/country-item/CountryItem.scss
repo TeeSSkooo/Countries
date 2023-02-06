@@ -1,0 +1,27 @@
+.item {
+  box-shadow: 0 3px 5px #ccc;
+  border-radius: 7px;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+  }
+
+  &__group:last-child {
+    padding: 10px 20px 25px;
+
+    div:not(:last-child) {
+      margin-bottom: 7px;
+    }
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__title {
+    margin: 0 0 15px 0;
+  }
+}
+
+@import './media.scss';

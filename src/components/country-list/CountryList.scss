@@ -1,0 +1,11 @@
+.country-list {
+  &__items {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+@import './media.scss';

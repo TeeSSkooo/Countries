@@ -1,0 +1,13 @@
+@media (max-width: 600px) {
+  .form__container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form__search,
+  .form__filter {
+    font-size: 14px;
+  }
+}
