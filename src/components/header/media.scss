@@ -13,6 +13,16 @@
   }
 
   .header__btn {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header__title {
+    font-size: 14px;
+  }
+
+  .header__btn {
     font-size: 10px;
   }
 }

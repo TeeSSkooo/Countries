@@ -1,8 +1,53 @@
+@import '../../styles/vars.scss';
+
 .app {
   min-height: 100vh;
-  background-color: #fbfafb;
+  background-color: $app-background-light;
 
   &__main {
     padding: 60px 0 50px;
+  }
+}
+
+// ================= Dark Theme Styles =================
+
+.app.dark {
+  background-color: $app-background-dark;
+
+  .header {
+    background-color: $color-dark;
+
+    &__title {
+      color: $color-light;
+    }
+
+    &__btn {
+      color: $color-light;
+    }
+  }
+
+  .form {
+    &__search {
+      color: $color-light;
+      background-color: $color-dark;
+    }
+
+    &__filter {
+      color: $color-light;
+      background-color: $color-dark;
+
+      option {
+        color: $color-light;
+      }
+    }
+  }
+
+  .item {
+    &__name,
+    &__population,
+    &__region,
+    &__capital {
+      color: $color-light;
+    }
   }
 }

@@ -19,7 +19,7 @@ const CountryItem: React.FC<CountryItemProps> = ({ country }) => {
           <span>Region:</span> {country.region}
         </div>
         <div className="item__capital">
-          <span>Capital:</span> {country.capital}
+          <span>Capital:</span> {country.capital ? country.capital : 'None'}
         </div>
       </div>
     </li>

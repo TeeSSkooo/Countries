@@ -1,5 +1,7 @@
+@import '../../styles/vars.scss';
+
 .header {
-  box-shadow: 0 3px 15px #ccc;
+  box-shadow: $box-shadow;
   background-color: #fff;
 
   &__container {
@@ -28,7 +30,6 @@
   }
 
   &__img {
-    max-width: 100%;
     width: 30px;
     height: 30px;
   }

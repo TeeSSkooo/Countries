@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 
 import useAppDispatch from '../../hooks/redux/useAppDispatch';
+import useAppSelector from '../../hooks/redux/useAppSelector';
 import { searchCountry, changeActiveFilter } from '../../features/countries/countriesSlice';
+
+import arrowBlack from '../../assets/arrow-down-black.png';
+import arrowWhite from '../../assets/arrow-down-white.png';
+import searchBlack from '../../assets/search-black.svg';
+import searchWhite from '../../assets/search-white.svg';
 
 import './Form.scss';
 
@@ -9,6 +15,7 @@ const Form: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [filter, setFilter] = useState<string>('');
 
+  const { isDarkTheme } = useAppSelector((state) => state.countries);
   const dispatch = useAppDispatch();
 
   const queryChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -29,6 +36,11 @@ const Form: React.FC = () => {
     <form className="form" onSubmit={(event) => event.preventDefault()}>
       <div className="form__container">
         <div className="form__group">
+          <img
+            className="form__search-icon"
+            src={isDarkTheme ? searchWhite : searchBlack}
+            alt="Search"
+          />
           <input
             className="form__search"
             type="text"
@@ -49,6 +61,11 @@ const Form: React.FC = () => {
             <option value="oceania">Oceania</option>
             <option value="all">All regions</option>
           </select>
+          <img
+            className="form__arrow"
+            src={isDarkTheme ? arrowWhite : arrowBlack}
+            alt="Arrow down"
+          />
         </div>
       </div>
     </form>

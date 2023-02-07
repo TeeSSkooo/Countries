@@ -12,11 +12,11 @@ const CountryList: React.FC = () => {
 
   const { searchQuery, activeFilter } = useAppSelector((state) => state.countries);
 
-  const filteredData = getFilteredData(data, searchQuery, activeFilter);
+  const filteredData = getFilteredData(data, searchQuery, activeFilter).sort((a, b) =>
+    a.name.official > b.name.official ? 1 : -1
+  );
 
-  if (isLoading) {
-    return <Preloader />;
-  }
+  if (isLoading) return <Preloader />;
 
   if (isError) {
     return <h2 style={{ textAlign: 'center' }}>{JSON.stringify(error)}</h2>;

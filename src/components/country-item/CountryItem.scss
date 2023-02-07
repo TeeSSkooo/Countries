@@ -1,13 +1,15 @@
+@import '../../styles/vars.scss';
+
 .item {
-  box-shadow: 5px 5px 15px #ccc;
+  box-shadow: $box-shadow;
   border-radius: 7px;
   overflow: hidden;
   flex: 0 1 250px;
 
   &__group:first-child {
     img {
-      width: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      object-fit: unset;
     }
   }
 
