@@ -13,7 +13,7 @@ const CountryList: React.FC = () => {
   const { searchQuery, activeFilter } = useAppSelector((state) => state.countries);
 
   const filteredData = getFilteredData(data, searchQuery, activeFilter).sort((a, b) =>
-    a.name.official > b.name.official ? 1 : -1
+    a.name.common > b.name.common ? 1 : -1
   );
 
   if (isLoading) return <Preloader />;

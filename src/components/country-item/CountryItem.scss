@@ -7,9 +7,12 @@
   flex: 0 1 250px;
 
   &__group:first-child {
+    text-align: center;
+
     img {
       max-width: 100%;
-      object-fit: unset;
+      height: 180px;
+      object-fit: cover;
     }
   }
 

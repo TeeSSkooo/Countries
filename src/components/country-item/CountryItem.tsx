@@ -11,7 +11,7 @@ const CountryItem: React.FC<CountryItemProps> = ({ country }) => {
         <img src={country.flags.svg} alt={country.flags.alt} />
       </div>
       <div className="item__group">
-        <h3 className="item__name">{country.name.official}</h3>
+        <h3 className="item__name">{country.name.common}</h3>
         <div className="item__population">
           <span>Population:</span> {new Intl.NumberFormat('ru-RU').format(country.population)}
         </div>
