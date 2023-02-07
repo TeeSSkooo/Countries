@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 
+import useAppDispatch from '../../hooks/redux/useAppDispatch';
+import { searchCountry, changeActiveFilter } from '../../features/countries/countriesSlice';
+
 import './Form.scss';
 
 const Form: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [region, setRegion] = useState<string>('');
+  const [filter, setFilter] = useState<string>('');
+
+  const dispatch = useAppDispatch();
 
   const queryChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setSearchQuery(event.currentTarget.value);
+    const targetValue = event.currentTarget.value;
+
+    setSearchQuery(targetValue);
+    dispatch(searchCountry(targetValue));
   };
 
   const regionChangeHandler = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-    setRegion(event.currentTarget.value);
+    const targetValue = event.currentTarget.value;
+
+    setFilter(targetValue);
+    dispatch(changeActiveFilter(targetValue));
   };
 
   return (
@@ -27,15 +38,16 @@ const Form: React.FC = () => {
           />
         </div>
         <div className="form__group">
-          <select className="form__filter" defaultValue={region} onChange={regionChangeHandler}>
+          <select className="form__filter" defaultValue={filter} onChange={regionChangeHandler}>
             <option disabled value="">
               Filter By Region
             </option>
             <option value="africa">Africa</option>
-            <option value="amerika">Amerika</option>
+            <option value="americas">Amerika</option>
             <option value="asia">Asia</option>
             <option value="europe">Europe</option>
             <option value="oceania">Oceania</option>
+            <option value="all">All regions</option>
           </select>
         </div>
       </div>

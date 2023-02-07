@@ -1,11 +1,11 @@
 .country-list {
   &__items {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
+    margin: 0;
     padding: 0;
     list-style: none;
   }
 }
-
-@import './media.scss';

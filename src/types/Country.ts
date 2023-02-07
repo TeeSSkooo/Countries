@@ -18,6 +18,7 @@ export default interface Country {
   population: number;
   flags: {
     svg: string;
+    alt: string;
   };
   coatOfArms: {
     svg: string;

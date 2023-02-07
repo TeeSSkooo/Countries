@@ -1,20 +1,34 @@
 import CountryItem from '../country-item/CountryItem';
 import Preloader from '../preloader/Preloader';
 
+import getFilteredData from '../../helpers/getFilteredData';
+import useAppSelector from '../../hooks/redux/useAppSelector';
 import countriesApi from '../../api/countriesApi';
 
 import './CountryList.scss';
 
-const CountryList = () => {
-  const { data = [], isLoading } = countriesApi.useFetchCountriesQuery(null);
+const CountryList: React.FC = () => {
+  const { data = [], isLoading, isError, error } = countriesApi.useFetchCountriesQuery(null);
+
+  const { searchQuery, activeFilter } = useAppSelector((state) => state.countries);
+
+  const filteredData = getFilteredData(data, searchQuery, activeFilter);
+
+  if (isLoading) {
+    return <Preloader />;
+  }
+
+  if (isError) {
+    return <h2 style={{ textAlign: 'center' }}>{JSON.stringify(error)}</h2>;
+  }
 
   return (
     <section className="country-list">
       <div className="country-list__container">
-        {isLoading && <Preloader />}
+        {!filteredData.length && <h2 style={{ textAlign: 'center' }}>No match countries</h2>}
         <ul className="country-list__items">
-          {data.map((country) => (
-            <CountryItem key={country.population} country={country} />
+          {filteredData.map((country) => (
+            <CountryItem key={country.name.official} country={country} />
           ))}
         </ul>
       </div>

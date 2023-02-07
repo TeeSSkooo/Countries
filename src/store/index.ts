@@ -1,9 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 import countriesApi from '../api/countriesApi';
+import countriesReducer from '../features/countries/countriesSlice';
 
 const rootReducer = combineReducers({
   [countriesApi.reducerPath]: countriesApi.reducer,
+  countries: countriesReducer,
 });
 
 const store = configureStore({
