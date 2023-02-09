@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import useAppDispatch from '../../hooks/redux/useAppDispatch';
-import useAppSelector from '../../hooks/redux/useAppSelector';
 import { searchCountry, changeActiveFilter } from '../../features/countries/countriesSlice';
 
 import arrowBlack from '../../assets/arrow-down-black.png';
@@ -12,10 +11,13 @@ import searchWhite from '../../assets/search-white.svg';
 import './Form.scss';
 
 const Form: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [filter, setFilter] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string | null>(
+    localStorage.getItem('searchQuery')
+  );
+  const [filter, setFilter] = useState<string | null>(localStorage.getItem('filter'));
 
-  const { isDarkTheme } = useAppSelector((state) => state.countries);
+  const isDarkTheme: boolean = localStorage.getItem('theme') === 'dark';
+
   const dispatch = useAppDispatch();
 
   const queryChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -45,12 +47,16 @@ const Form: React.FC = () => {
             className="form__search"
             type="text"
             placeholder="Search for a country..."
-            value={searchQuery}
+            value={searchQuery ? searchQuery : ''}
             onChange={queryChangeHandler}
           />
         </div>
         <div className="form__group">
-          <select className="form__filter" defaultValue={filter} onChange={regionChangeHandler}>
+          <select
+            className="form__filter"
+            defaultValue={filter ? filter : ''}
+            onChange={regionChangeHandler}
+          >
             <option disabled value="">
               Filter By Region
             </option>

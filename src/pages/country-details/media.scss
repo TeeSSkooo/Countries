@@ -1,0 +1,47 @@
+@media (max-width: 992px) {
+  .details__link-wrapper {
+    text-align: center;
+  }
+
+  .details__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details__content {
+    h2,
+    > div {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .details__content {
+    h2 {
+      font-size: 21px;
+    }
+
+    > div {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .details {
+    &__content {
+      h2 {
+        font-size: 21px;
+      }
+
+      > div {
+        font-size: 14px;
+      }
+    }
+
+    .flag {
+      width: 200px;
+    }
+  }
+}

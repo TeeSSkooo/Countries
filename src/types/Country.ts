@@ -2,6 +2,11 @@ export default interface Country {
   name: {
     common: string;
     official: string;
+    nativeName: {
+      [key: string]: {
+        official: string;
+      };
+    };
   };
   independent: boolean;
   currencies: {
@@ -13,7 +18,9 @@ export default interface Country {
   capital: string[];
   region: string;
   subregion: string;
-  languages: string[];
+  languages: {
+    [key: string]: string;
+  };
   area: number;
   population: number;
   flags: {

@@ -3,10 +3,6 @@
 .app {
   min-height: 100vh;
   background-color: $app-background-light;
-
-  &__main {
-    padding: 60px 0 50px;
-  }
 }
 
 // ================= Dark Theme Styles =================
@@ -47,6 +43,31 @@
     &__population,
     &__region,
     &__capital {
+      color: $color-light;
+    }
+  }
+
+  .details {
+    background-color: $app-background-dark;
+
+    &__content {
+      h2,
+      > div {
+        color: $color-light;
+      }
+    }
+
+    &__back {
+      color: $color-light;
+      background-color: $color-dark;
+    }
+  }
+
+  .not-found {
+    background-color: $app-background-dark;
+
+    &__caption,
+    a {
       color: $color-light;
     }
   }

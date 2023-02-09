@@ -6,6 +6,11 @@
   overflow: hidden;
   flex: 0 1 250px;
 
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
   &__group:first-child {
     text-align: center;
 

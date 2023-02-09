@@ -1,0 +1,82 @@
+@import '../../styles/vars.scss';
+
+.details {
+  padding: 60px 50px;
+
+  span {
+    font-weight: 600;
+  }
+
+  &__container {
+    img {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  .flag {
+    width: 350px;
+    margin-bottom: 30px;
+  }
+
+  &__link-wrapper {
+    margin-bottom: 50px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  &__back {
+    position: relative;
+    display: inline-block;
+    border-radius: 7px;
+    padding: 10px 20px 10px 40px;
+    box-shadow: $box-shadow;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    background-color: $color-light;
+
+    .arrow-back {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      width: 15px;
+      height: 15px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__img {
+    flex: 1 1 50%;
+  }
+
+  &__content {
+    flex: 1 1 50%;
+
+    > div {
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    > div:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__name {
+    margin: 0 0 25px 0;
+    font-size: 32px;
+    line-height: 150%;
+  }
+
+  .coatOfArms {
+    width: 150px;
+    margin-bottom: 60px;
+  }
+}
+
+@import './media.scss';

@@ -9,6 +9,9 @@ const countriesApi = createApi({
     fetchCountries: builder.query<Country[], null>({
       query: () => '/all',
     }),
+    fetchCountryByName: builder.query<Country[], string>({
+      query: (name) => `/name/${name}`,
+    }),
   }),
 });
 

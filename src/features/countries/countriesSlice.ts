@@ -5,7 +5,7 @@ import CountriesState from '../../types/CountriesState';
 const initialState: CountriesState = {
   searchQuery: '',
   activeFilter: 'all',
-  isDarkTheme: false,
+  theme: 'light',
 };
 
 const countriesSlice = createSlice({
@@ -14,12 +14,15 @@ const countriesSlice = createSlice({
   reducers: {
     searchCountry(state, action) {
       state.searchQuery = action.payload;
+      localStorage.setItem('searchQuery', action.payload);
     },
     changeActiveFilter(state, action) {
       state.activeFilter = action.payload;
+      localStorage.setItem('filter', action.payload);
     },
-    changeColorTheme(state) {
-      state.isDarkTheme = !state.isDarkTheme;
+    changeColorTheme(state, action) {
+      state.theme = action.payload;
+      localStorage.setItem('theme', action.payload);
     },
   },
 });

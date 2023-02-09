@@ -8,11 +8,13 @@ import moon from '../../assets/moon.png';
 import './Header.scss';
 
 const Header: React.FC = () => {
-  const { isDarkTheme } = useAppSelector((state) => state.countries);
+  const { theme } = useAppSelector((state) => state.countries);
   const dispatch = useAppDispatch();
 
+  const isDarkTheme: boolean = localStorage.getItem('theme') === 'dark';
+
   const changeTheme = (): void => {
-    dispatch(changeColorTheme());
+    dispatch(changeColorTheme(theme === 'light' ? 'dark' : 'light'));
   };
 
   return (
